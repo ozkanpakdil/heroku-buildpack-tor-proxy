@@ -1,3 +1,6 @@
+https://heroku.com/deploy?template=https://github.com/ozkanpakdil/heroku-buildpack-tor-proxy
+
+
 # Tor Proxy Buildpack for Heroku
 
 This buildpack sets up a Tor Proxy for your app on Heroku.
