@@ -4,9 +4,6 @@
 # Essentials
 ################################################################################
 
-echo "BASH_VERSION"
-printf "%s\n" $BASH_VERSION
-
 set -x
 
 HEROKU_BUILD_DIR=$1
@@ -15,7 +12,7 @@ HEROKU_ENV_DIR=$3
 
 # Essental functions
 
-function export_env_dir {
+export_env_dir() {
   env_dir=$1
   whitelist_regex=${2:-''}
   blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
@@ -29,13 +26,13 @@ function export_env_dir {
   fi
 }
 
-function indent {
+indent() {
   sed -u 's/^/      /'
 }
 
 # Load env variables
 
-export_env_vars "$HEROKU_ENV_DIR"
+export_env_dir "$HEROKU_ENV_DIR"
 
 ################################################################################
 # Variables
