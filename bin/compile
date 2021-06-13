@@ -4,6 +4,9 @@
 # Essentials
 ################################################################################
 
+echo "BASH_VERSION"
+printf "%s\n" $BASH_VERSION
+
 set -x
 
 HEROKU_BUILD_DIR=$1
