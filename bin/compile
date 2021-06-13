@@ -43,6 +43,7 @@ TOR_DIST_URL="https://dist.torproject.org/"
 
 TOR_SRCH="tor-.\..\..\..\.tar\.gz"
 TOR_SRC_NAME=$(curl -s "$TOR_DIST_URL" | grep -o -e "$TOR_SRCH" | sort | tail -1)
+TOR_VER=$(echo $TOR_SRC_NAME| grep -oP 'tor-\K.*(?=\.tar\.gz)')
 
 if [ -z "$TOR_CONTROL_PASS" ]; then
   TOR_CONTROL_PASS="torProxy@123"
